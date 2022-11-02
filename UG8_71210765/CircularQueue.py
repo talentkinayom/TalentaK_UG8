@@ -10,6 +10,7 @@ class CircularQueue:
             self.data.append(d)
             self.size += 1
             self.front = 0
+        
 
     def dequeue(self):
         if self.size > 0:
@@ -27,11 +28,16 @@ class CircularQueue:
         return self.data[self.front]
         
     def display(self):
-        print('Yang ada pada antrian adalah:','',end='')
-        for d in self.data:
-            print(d,'',end='')
-        print()
-        if self.size == self.capacity:
+        if self.size < self.capacity:
+            print('Yang ada pada antrian adalah:','',end='')
+            for d in self.data:
+                print(d,'',end='')
+            print()
+        elif self.size == self.capacity:
+            print('Yang ada pada antrian circular adalah:','',end='')
+            for d in self.data:
+                print(d,'',end='')
+            print()
             print('Antrian penuh')
 
 CircularQueue = CircularQueue(5)
